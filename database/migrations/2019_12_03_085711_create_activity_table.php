@@ -23,6 +23,8 @@ class CreateActivityTable extends Migration
             $table->timestamp('theorical_end')->nullable();
             $table->timestamp('real_start')->nullable();
             $table->timestamp('real_end')->nullable();
+            $table->unsignedInteger('theorical_duration');
+            $table->unsignedInteger('real_duration');
             $table->double('theorical_cost');
             $table->double('real_cost');
             $table->boolean('validation');
