@@ -38,16 +38,16 @@ class CreateUsersTable extends Migration
         });
 
         Schema::create('role_command', function (Blueprint $table) {
-            $table->bigIncrements('user_id');
-            $table->bigIncrements('role_id');
+            $table->int('user_id');
+            $table->int('role_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('role_id')->references('id')->on('role');
         });
 
         Schema::create('user_project_role', function (Blueprint $table) {
-            $table->bigIncrements('user_id');
-            $table->bigIncrements('project_id');
-            $table->bigIncrements('role_id');
+            $table->int('user_id');
+            $table->int('project_id');
+            $table->int('role_id');
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('role_id')->references('id')->on('role');
